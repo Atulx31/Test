@@ -29,7 +29,11 @@ public class EjecutarEstudiante {
         k++;
     }
 }
-        System.out.println("Promedio de notas: " + (sumarNotas/k));
+if (k == 0) {
+    System.out.println("No se encontraron estudiantes de Ingeniería de Sistemas en el semestre 6.");
+} else {
+    System.out.println("Promedio de notas: " + (sumarNotas/k));
+}
         //estudiantes menores de 3 semestre
         // double sumarNotas = 0.0;
         //  for (int i = 0; i < est.length; i++){
