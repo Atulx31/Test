@@ -11,7 +11,7 @@ public class EjecutarEstudiante {
         est [2] = new Estudiante("Carlos", 7, "Medicina", 4.2, 19);
         est [3] = new Estudiante("Ana", 4, "Arquitectura", 4.7      , 21);
         est [4] = new Estudiante("Pedro", 1, "Psicología", 4.3, 20);
-        est [5] = new Estudiante("Sofía", 6, "Administración", 4.9, 23);
+        est [5] = new Estudiante("Sofía", 6, "Ingeniería de Sistemas", 4.9, 23);
         est [6] = new Estudiante("Luis", 6, "Ingeniería de Sistemas", 4.6, 18);
         
         //imprimir el nombre y programa de cada estudiante
@@ -20,13 +20,16 @@ public class EjecutarEstudiante {
         // }
 
         
-
+        double sumarNotas = 0.0;
+        int k =0;
         for (int i = 0; i < est.length; i++){
     if (est[i].getSemestre() == 6 && est[i].getPrograma().equals("Ingeniería de Sistemas")){
         System.out.println(est[i].getNombre() + " -> " + est[i].getSemestre() + " -> " + est[i].getPrograma());
+        sumarNotas += est[i].getNotaPromedio();
+        k++;
     }
 }
-        
+        System.out.println("Promedio de notas: " + (sumarNotas/k));
         //estudiantes menores de 3 semestre
         // double sumarNotas = 0.0;
         //  for (int i = 0; i < est.length; i++){
