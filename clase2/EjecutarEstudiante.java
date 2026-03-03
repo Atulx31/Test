@@ -37,7 +37,7 @@ if (k == 0) {
         //estudiantes menores de 3 semestre
         // double sumarNotas = 0.0;
         //  for (int i = 0; i < est.length; i++){
-        //  if (est[i].getSemestre() == 6){
+        //  i4f (est[i].getSemestre() == 6){
         //     System.out.println(est[i].getNombre() + " -> " + est[i].getSemestre());
         //     sumarNotas += est[i].getNotaPromedio();
         //     System.out.println(sumarNotas/est.length);
