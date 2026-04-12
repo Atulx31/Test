@@ -5,6 +5,8 @@ public class Matriz {
     public static void main(String[] args) {
 
         Operacionesmatrices op = new Operacionesmatrices();
+        Papeleria[][] papeleria = new Papeleria[5][5];
+
         
         // creacion de una matriz forma 1|
         int[][] m1 = {
@@ -38,5 +40,6 @@ public class Matriz {
             // operaciones con matrices
             int[][] m = op.llenarMatrizAleatoria(5, 5, 1, 9);
             System.out.println(op.mostrarMatriz(m));
+            System.out.println(op.mayorMenor(m));
     }
 }
