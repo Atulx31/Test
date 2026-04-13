@@ -1,6 +1,6 @@
 import java.util.Stack;
 
-public class Pilas{
+public class Ejercicio93{
 
         
         Stack<Character> pila = new Stack<>();
