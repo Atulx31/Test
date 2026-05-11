@@ -1,14 +1,17 @@
 package ProyectoFinal.Vista;
 import java.util.Scanner;
 import ProyectoFinal.Controlador.ControladorGestionPaciente;
+import ProyectoFinal.Servicios.ServicioPaciente;
 
 public class InterfazRecepcionista {
     private Scanner scanner;
     ControladorGestionPaciente controladorGestionPaciente;
+    ServicioPaciente servicioPaciente;
 
     public InterfazRecepcionista(ControladorGestionPaciente controladorGestionPaciente) {
         this.controladorGestionPaciente = controladorGestionPaciente;
         this.scanner = new Scanner(System.in);
+        this.servicioPaciente = new ServicioPaciente(null); // Pasar el repositorio correspondiente
     }
 
     public void mostrarMenuRecepcionista() {
@@ -46,8 +49,11 @@ public class InterfazRecepcionista {
         System.out.println("=== Registrar Paciente ===");
         System.out.print("Ingrese el nombre del paciente: ");
         String nombre = scanner.nextLine();
-        System.out.print("Ingrese la cédula del paciente: ");
+        System.out.print("Ingrese la cédula del paciente (sin puntos ni comas): ");
         String cedula = scanner.nextLine();
+        if (!servicioPaciente.validarSoloNumeros(cedula)){
+            return;
+        };
         System.out.print("Ingrese el teléfono del paciente: ");
         String telefono = scanner.nextLine();
         String resultado = controladorGestionPaciente.registrarPaciente(nombre, cedula, telefono);
