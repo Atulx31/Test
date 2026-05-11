@@ -53,4 +53,8 @@ public class InterfazRecepcionista {
         String resultado = controladorGestionPaciente.registrarPaciente(nombre, cedula, telefono);
         System.out.println(resultado);
     }
+
+    private void actualizarPaciente() {
+        
+    }
 }
