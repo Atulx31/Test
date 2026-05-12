@@ -48,14 +48,22 @@ public class InterfazRecepcionista {
     private void MenuRegistrarPaciente() {
         System.out.println("=== Registrar Paciente ===");
         System.out.print("Ingrese el nombre del paciente: ");
+
         String nombre = scanner.nextLine();
+        
+
         System.out.print("Ingrese la cédula del paciente (sin puntos ni comas): ");
         String cedula = scanner.nextLine();
-        if (!servicioPaciente.validarSoloNumeros(cedula)){
-            return;
-        };
+       
+
         System.out.print("Ingrese el teléfono del paciente: ");
         String telefono = scanner.nextLine();
+
+        if (!servicioPaciente.validarDatos(nombre, cedula, telefono)){
+            return;
+        }
+        
+
         String resultado = controladorGestionPaciente.registrarPaciente(nombre, cedula, telefono);
         System.out.println(resultado);
     }

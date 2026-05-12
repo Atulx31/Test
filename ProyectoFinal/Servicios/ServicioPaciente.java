@@ -17,26 +17,20 @@ public class ServicioPaciente {
         } else {
             Paciente paciente = new Paciente(nombre, cedula, telefono);
             repositorioPaciente.guardar(paciente);
-            return "Paciente registrado exitosamente: ";
+            return "Paciente registrado exitosamente. ";
         }
     }
 
-    public void validarLlenadoDatos(String nombre, String cedula, String telefono) {
-        if (nombre == null || nombre.isEmpty()) {
-            System.out.println("El nombre del paciente no puede estar vacío.");
+    public boolean validarDatos(String nombre, String cedula, String telefono) {
+        if (nombre.isEmpty() || cedula.isEmpty() || telefono.isEmpty()) {
+            System.out.println("Todos los campos son obligatorios.");
+            return false;
         }
-        if (cedula == null || cedula.isEmpty()) {
-            System.out.println("La cédula del paciente no puede estar vacía.");
-        }
-    }
 
-    public boolean validarSoloNumeros(String cedula){
-        if (cedula.matches("\\d+")){
-            return true;
-        } else {
+        if (!cedula.matches("\\d+")){
             System.out.println("La cédula debe contener solo números. Por favor, ingrese una cédula válida.");
-            return false;  
+            return false;
         }
-}
-
+        return true;
+        }
 }
